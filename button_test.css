@@ -1,0 +1,113 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:consolas;
+}
+:root{
+    /* Variables*/
+    --bg-color: #032103;
+    --primary-color: #3af321;
+    --secondary-color: #25842d;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-color);
+}
+.btn{
+    position: relative;
+    display: block;
+    padding: 15px 30px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 18px;
+    text-decoration: none;
+    font-size: 36px;
+    overflow: hidden;
+    /* transition: 0.2s; */
+}
+.btn:hover{
+    /* This one inverses the background-color
+    and font color */
+    color: var(--secondary-color);
+    background: var(--primary-color);
+    /* using this technique, we can have 4 different
+    size of shadows at all four sides */
+    box-shadow:
+        0 0 20px var(--primary-color),
+        0 0 80px var(--primary-color),
+        0 0 1600px var(--primary-color),
+        0 0 320px var(--primary-color);
+    /* Transition act as a timer */
+    transition-delay: 1s;
+}
+.btn span{
+    /* this one will act as a container for the box */
+    position: absolute;
+    display: block;
+}
+.btn span:nth-child(1){
+    top:0;
+    transform: translateX(-115%);
+    width: 100%;
+    height:4px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--primary-color)
+    );
+}
+.btn:hover span:nth-child(1){
+    transform: translateX(100%);
+    transition: 3s;
+}
+.btn span:nth-child(2){
+    transform: translateY(-130%);
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        transparent,
+        var(--primary-color)
+    );
+}
+.btn:hover span:nth-child(2){
+    transform: translateY(100%);
+    transition: 1s 0.25s;
+}
+.btn span:nth-child(3){
+    bottom:0;
+    transform: translateX(100%);
+    width: 100%;
+    height:4px;
+    background: linear-gradient(
+        270deg,
+        transparent,
+        var(--primary-color)
+    );
+}
+.btn:hover span:nth-child(3){
+    transform: translateX(-115%);
+    transition: 1s 0.5s;
+}
+.btn span:nth-child(4){
+    transform: translateY(100%);
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(
+        360deg,
+        transparent,
+        var(--primary-color)
+    );
+}
+.btn:hover span:nth-child(4){
+    transform: translateY(-130%);
+    transition: 1s 0.75s;
+}
